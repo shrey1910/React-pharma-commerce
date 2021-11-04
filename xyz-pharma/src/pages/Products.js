@@ -1,22 +1,22 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Products from './pages/Products';
+import Navbar from './Navbar'
 
 
+class Products extends React.Component{
 
-
-class App extends React.Component{
-
+  constructor(){
+      super()
+  }
 
   render(){
 
     return(
     
       <React.Fragment>
+            <Navbar />
 
-     
-        <Products />
-        
+
       </React.Fragment>
     )
   }
@@ -24,4 +24,4 @@ class App extends React.Component{
   
 }
 
-export default App;
+export default Products;

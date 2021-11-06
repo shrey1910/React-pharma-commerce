@@ -20,7 +20,7 @@ class Home extends React.Component{
     
       <React.Fragment>
         <div className="container-fluid">
-        <Navbar />
+        
         <img style={{maxWidth: '100%',height: 'auto'}} src={banner} alt="banner"></img>
         
 

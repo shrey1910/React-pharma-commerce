@@ -2,6 +2,13 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './pages/Products';
 import axios from 'axios';
+import Navbar from './pages/Navbar';
+import {BrowserRouter as Router,Route,Link,Routes} from 'react-router-dom';
+import Investors from './pages/Investors';
+import About from './pages/About';
+import Home from './pages/Home';
+
+
 
 
 
@@ -29,11 +36,22 @@ class App extends React.Component{
   render(){
 
     return(
-    
+      
       <React.Fragment>
+        <Navbar />    
         
        
-       {this.state.medicineList &&<Products medicineList={this.state.medicineList}/>}
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/products" element={this.state.medicineList && <Products medicineList={this.state.medicineList} />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/investors" element={<Investors />} />
+        </Routes>
+        
+          
+       
+       
         
         
       </React.Fragment>

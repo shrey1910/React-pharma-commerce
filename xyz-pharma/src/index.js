@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router,Route,Link,Routes} from 'react-router-dom';
-import Investors from './pages/Investors';
-import About from './pages/About';
-import Home from './pages/Home';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 ReactDOM.render(
   <>

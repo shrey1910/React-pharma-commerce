@@ -3,8 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import medicine1 from '../images/medicine1.jpg'
 import medicine2 from '../images/medicine2.jpg'
 import medicine3 from '../images/medicine3.jpg'
-import Navbar from './Navbar'
 
+var dict ={
+  "medicine1":medicine1,
+  "medicine2":medicine2,
+  "medicine3":medicine3
+}
 
 class Products extends React.Component {
 
@@ -31,11 +35,12 @@ class Products extends React.Component {
               <div className="card mb-3" style={{ maxWidth: "540px" }} key={index}>
                 <div className="row g-0">
                   <div className="col-md-4">
-                    <img src={medicine1} className="img-fluid rounded-start" alt={'medicine'+String(index+1)}></img>
+                    <img src={dict['medicine'+String(index+1)]} className="img-fluid rounded-start" alt={'medicine'+String(index+1)}></img>
                   </div>
                   <div className="col-md-8" style={{ backgroundColor: 'hsl(105, 100%, 40%)' }}>
                     <div className="card-body">
                       <h5 className="card-title">{element.tradeName}</h5>
+                     
                       <h6>{element.genericName}</h6>
                       
                       <h6>{element.category}</h6>

@@ -7,6 +7,7 @@ import {Route,Routes} from 'react-router-dom';
 import Investors from './pages/Investors';
 import About from './pages/About';
 import Home from './pages/Home';
+import Reviews from './pages/Reviews';
 
 
 
@@ -47,6 +48,7 @@ class App extends React.Component{
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/investors" element={<Investors />} />
+          <Route exact path="/reviews" element={<Reviews />} />
         </Routes>
         
           

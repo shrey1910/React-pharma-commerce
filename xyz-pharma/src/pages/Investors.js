@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from "axios";
 
 const Investors =() =>{
     const[state,setstate] = useState({Year:"",Quater:""})
@@ -11,7 +12,24 @@ const Investors =() =>{
     const submitForm=(e)=>{
         e.preventDefault();//stops reloading
         console.log('form is submitted');
-        console.log(state);
+        axios.get('http://localhost:4000/table').then((response)=>{
+            let arr=response.data
+            if(state.Year==='2019')
+                {
+                    arr = arr[0];
+                }
+            else if(state.Year==='2020')
+            {
+                    arr = arr[1];
+            }
+            else{
+                const error = new Error("Invalid request")
+                throw error;
+            }
+            console.log(arr);
+            
+            
+        })
     }
 
     return(

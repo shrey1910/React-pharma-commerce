@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './pages/Products';
 import axios from 'axios';
 import Navbar from './pages/Navbar';
-import {Route,Routes} from 'react-router-dom';
+import {BrowserRouter as Router,Route,Link,Routes} from 'react-router-dom';
 import Investors from './pages/Investors';
 import About from './pages/About';
 import Home from './pages/Home';
@@ -20,11 +20,11 @@ class App extends React.Component{
     this.state = {medicineList:null}
   }
 
-  UNSAFE_componentWillMount(){
+  componentWillMount(){
     console.log('before rendering loading');
     axios.get('http://localhost:4000/products').then((response)=>{
       this.setState({medicineList:response.data})
-      console.log("Data received from Server")
+      console.log("updated here... and loaded")
     }).catch()
   }
 
